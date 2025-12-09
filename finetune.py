@@ -8,13 +8,14 @@ import os
 from huggingface_hub import login
 import gc
 
-# Set HuggingFace cache to avoid disk quota issues
+# Set HuggingFace cache and token directories to avoid disk quota issues
 os.environ['HF_HOME'] = '/cs/student/projects3/2023/dkozlov/conda-pkgs/huggingface'
 os.environ['TRANSFORMERS_CACHE'] = '/cs/student/projects3/2023/dkozlov/conda-pkgs/huggingface/transformers'
+os.environ['HF_TOKEN_PATH'] = '/cs/student/projects3/2023/dkozlov/conda-pkgs/huggingface/token'
 
-# Access Llama model
+# Access Llama model - set token as environment variable to avoid saving
 token = # insert token #
-login(token, add_to_git_credential=False)  # Don't save token to disk
+os.environ['HF_TOKEN'] = token
 
 # Clear GPU memory and restart Python kernel state
 torch.cuda.empty_cache()
