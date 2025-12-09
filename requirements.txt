@@ -1,0 +1,10 @@
+ipykernel
+unsloth
+torch=2.9.1
+transformers
+peft
+dotenv
+huggingface_hub
+bitsandbytes
+accelerate
+datasets
