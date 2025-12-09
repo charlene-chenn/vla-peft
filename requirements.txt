@@ -1,8 +1,7 @@
 ipykernel
 unsloth
 torch==2.9.1
-transformers==4.57.3
-pytorch-cuda==12.1
+transformers==4.57.1
 peft
 dotenv
 huggingface_hub
