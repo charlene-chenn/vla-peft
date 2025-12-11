@@ -460,7 +460,7 @@ def main():
         lr_scheduler_type="cosine",
         logging_steps=20,
         save_steps=500,
-        evaluation_strategy="steps",
+        eval_strategy="steps",
         eval_steps=500,
         bf16=torch.cuda.is_bf16_supported(),
         report_to="none",
