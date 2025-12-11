@@ -2,6 +2,8 @@ from pathlib import Path
 
 from ultralytics import YOLO
 
+SETTINGS['settings_dir'] = "/cs/student/projects3/2023/dkozlov/.ultralytics"
+SETTINGS['settings_file'] = "/cs/student/projects3/2023/dkozlov/.ultralytics/settings.json"
 
 class YOLOv8Detector:
     """

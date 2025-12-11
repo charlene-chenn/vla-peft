@@ -18,6 +18,19 @@ from transformers import (
     CLIPProcessor,
 )
 
+CUSTOM_ULTRA_DIR = "/cs/student/projects3/2023/dkozlov/.ultralytics"
+os.makedirs(CUSTOM_ULTRA_DIR, exist_ok=True)
+
+# 2. Set environment variable (recommended + future-proof)
+os.environ["ULTRALYTICS_CONFIG_DIR"] = CUSTOM_ULTRA_DIR
+
+# 3. Import ultralytics AFTER setting env vars
+from ultralytics.utils import SETTINGS
+
+# 4. Overwrite settings inside ultralytics
+SETTINGS["settings_dir"] = CUSTOM_ULTRA_DIR
+SETTINGS["settings_file"] = os.path.join(CUSTOM_ULTRA_DIR, "settings.json")
+
 from yolo_detector import YOLOv8Detector  # type: ignore
 THIS_DIR = Path(__file__).resolve().parent
 
