@@ -1,6 +1,13 @@
+import os
 from pathlib import Path
 
+# Configure ultralytics directory before importing
+CUSTOM_ULTRA_DIR = "/cs/student/projects3/2023/dkozlov/.ultralytics"
+os.makedirs(CUSTOM_ULTRA_DIR, exist_ok=True)
+os.environ["ULTRALYTICS_CONFIG_DIR"] = CUSTOM_ULTRA_DIR
+
 from ultralytics import YOLO
+
 
 class YOLOv8Detector:
     """

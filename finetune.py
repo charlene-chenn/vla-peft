@@ -1,16 +1,14 @@
 import os
 import sys
-
-# CRITICAL: Set ultralytics config directory BEFORE any imports
-CUSTOM_ULTRA_DIR = "/cs/student/projects3/2023/dkozlov/.ultralytics"
-os.makedirs(CUSTOM_ULTRA_DIR, exist_ok=True)
-os.environ["ULTRALYTICS_CONFIG_DIR"] = CUSTOM_ULTRA_DIR
-
-# Now safe to import everything else
 import gc
 import json
 import random
 from pathlib import Path
+
+# Configure ultralytics to use custom directory (must be before any ultralytics imports)
+CUSTOM_ULTRA_DIR = "/cs/student/projects3/2023/dkozlov/.ultralytics"
+os.makedirs(CUSTOM_ULTRA_DIR, exist_ok=True)
+os.environ["ULTRALYTICS_CONFIG_DIR"] = CUSTOM_ULTRA_DIR
 
 from unsloth import FastLanguageModel
 import torch
