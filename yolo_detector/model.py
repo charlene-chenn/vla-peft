@@ -14,6 +14,14 @@ if default_settings.exists():
     except Exception:
         pass
 
+from ultralytics import settings
+
+# Force update settings to use custom directory
+settings.update({
+    'datasets_dir': CUSTOM_ULTRA_DIR,
+    'weights_dir': os.path.join(CUSTOM_ULTRA_DIR, 'weights'),
+    'runs_dir': os.path.join(CUSTOM_ULTRA_DIR, 'runs'),
+})
 from ultralytics import YOLO
 
 
