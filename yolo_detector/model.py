@@ -6,6 +6,14 @@ CUSTOM_ULTRA_DIR = "/cs/student/projects3/2023/dkozlov/.ultralytics"
 os.makedirs(CUSTOM_ULTRA_DIR, exist_ok=True)
 os.environ["ULTRALYTICS_CONFIG_DIR"] = CUSTOM_ULTRA_DIR
 
+# Delete corrupted settings file from default location if it exists
+default_settings = Path.home() / ".config" / "Ultralytics" / "settings.json"
+if default_settings.exists():
+    try:
+        default_settings.unlink()
+    except Exception:
+        pass
+
 from ultralytics import YOLO
 
 
