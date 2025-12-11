@@ -3,7 +3,7 @@ import pprint
 import sys
 from pathlib import Path
 
-from dl_geoguesser.vision.yolo_detector.model import YOLOv8Detector
+from yolo_detector.model import YOLOv8Detector
 
 
 def main():

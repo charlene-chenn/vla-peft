@@ -9,3 +9,4 @@ bitsandbytes
 accelerate
 datasets
 pillow
+ultralytics
