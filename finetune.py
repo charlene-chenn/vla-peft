@@ -5,6 +5,11 @@ import json
 import random
 from pathlib import Path
 
+# Configure ultralytics to use custom directory (must be before any ultralytics imports)
+CUSTOM_ULTRA_DIR = "/cs/student/projects3/2023/dkozlov/.ultralytics"
+os.makedirs(CUSTOM_ULTRA_DIR, exist_ok=True)
+os.environ["ULTRALYTICS_CONFIG_DIR"] = CUSTOM_ULTRA_DIR
+
 from unsloth import FastLanguageModel
 import torch
 import torch.nn.functional as F
@@ -17,19 +22,6 @@ from transformers import (
     CLIPModel,
     CLIPProcessor,
 )
-
-CUSTOM_ULTRA_DIR = "/cs/student/projects3/2023/dkozlov/.ultralytics"
-os.makedirs(CUSTOM_ULTRA_DIR, exist_ok=True)
-
-# 2. Set environment variable (recommended + future-proof)
-os.environ["ULTRALYTICS_CONFIG_DIR"] = CUSTOM_ULTRA_DIR
-
-# 3. Import ultralytics AFTER setting env vars
-from ultralytics.utils import SETTINGS
-
-# 4. Overwrite settings inside ultralytics
-SETTINGS["settings_dir"] = CUSTOM_ULTRA_DIR
-SETTINGS["settings_file"] = os.path.join(CUSTOM_ULTRA_DIR, "settings.json")
 
 from yolo_detector import YOLOv8Detector  # type: ignore
 THIS_DIR = Path(__file__).resolve().parent
