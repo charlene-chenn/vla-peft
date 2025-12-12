@@ -1,0 +1,21 @@
+{
+  "country": "andorra",
+  "country_confidence": 0.55,
+  "driving_side": "right",
+  "driving_side_confidence": 0.93,
+  "vibe_top": "mountain architecture / architecture",
+  "vibe_distribution": {
+    "mountain architecture / architecture": 0.45,
+    "dense urban city center": 0.15,
+    "suburban residential area": 0.12,
+    "coastal beach town": 0.08,
+    "rural farmland": 0.10,
+    "forest road": 0.07,
+    "desert landscape": 0.03
+  },
+  "evidence": {
+    "top_sign_countries": ["andorra", "andorra", "france"],
+    "top_contents": ["architecture", "sceneries"],
+    "gradcam_examples": []
+  }
+}
