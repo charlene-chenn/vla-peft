@@ -34,7 +34,7 @@ from peft import PeftModel
 model = PeftModel.from_pretrained(model, LORA_CHECKPOINT_DIR)
 model.eval()
 
-print(f"Model loaded with LoRA weights from {LORA_CHECKPOINT_DIR}")
+print("Model loaded with LoRA weights from:", LORA_CHECKPOINT_DIR)
 
 # -------------------------------------------------------------------------
 # 2. LOAD DUMMY VISION DATA (replace with actual vision pipeline later)
@@ -46,3 +46,4 @@ with open(dir, 'r') as f:
     data = json.load(f) # load as dict
  
 print(f"Data: {data}, Type: {type(data)}")
+
