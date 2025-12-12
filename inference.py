@@ -1,5 +1,3 @@
-<<<<<<< Updated upstream
-=======
 import json
 from pathlib import Path
 import torch
@@ -10,7 +8,7 @@ from unsloth import FastLanguageModel
 # -------------------------------------------------------------------------
 
 BASE_MODEL_NAME = "unsloth/llama-3-8b-bnb-4bit"
-LORA_CHECKPOINT_DIR = "./geohints-llama3-explainer"  # or specify checkpoint subdirectory
+LORA_CHECKPOINT_DIR = "./checkpoints"
 
 # Load the base model
 model, tokenizer = FastLanguageModel.from_pretrained(
@@ -48,4 +46,3 @@ with open(dir, 'r') as f:
     data = json.load(f) # load as dict
  
 print(f"Data: {data}, Type: {type(data)}")
->>>>>>> Stashed changes
