@@ -8,7 +8,7 @@ from unsloth import FastLanguageModel
 # -------------------------------------------------------------------------
 
 BASE_MODEL_NAME = "unsloth/llama-3-8b-bnb-4bit"
-LORA_CHECKPOINT_DIR = "./checkpoints/checkpoint-1494"  # Use the latest checkpoint
+LORA_CHECKPOINT_DIR = "./checkpoints/checkpoint-1000"  # Try a different checkpoint
 
 print("Loading base model with Unsloth and LoRA weights...")
 
