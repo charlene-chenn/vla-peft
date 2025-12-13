@@ -10,30 +10,16 @@ from unsloth import FastLanguageModel
 BASE_MODEL_NAME = "unsloth/llama-3-8b-bnb-4bit"
 LORA_CHECKPOINT_DIR = "./checkpoints/checkpoint-1494"  # Use the latest checkpoint
 
-print("Loading base model with Unsloth...")
+print("Loading base model with Unsloth and LoRA weights...")
 
-# Load the base model
+# Load the base model with the trained LoRA checkpoint
 model, tokenizer = FastLanguageModel.from_pretrained(
-    model_name=BASE_MODEL_NAME,
+    model_name=LORA_CHECKPOINT_DIR,  # Load checkpoint directly
     max_seq_length=2048,
     dtype=None,
     load_in_4bit=True,
 )
 
-# Load the LoRA weights
-model = FastLanguageModel.get_peft_model(
-    model,
-    r=16,
-    target_modules=["q_proj", "v_proj"],
-    lora_alpha=32,
-    lora_dropout=0.05,
-    bias="none",
-    use_gradient_checkpointing=False,  # Set to False for inference
-)
-
-# Load the trained LoRA checkpoint
-from peft import PeftModel
-model = PeftModel.from_pretrained(model, LORA_CHECKPOINT_DIR)
 model.eval()
 
 # Enable native 2x faster inference
