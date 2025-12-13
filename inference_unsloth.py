@@ -57,7 +57,6 @@ def make_prompt(vision_json: dict) -> str:
         "- Any plausible alternative countries,\n"
         "- Why the driving side, architecture, vegetation, signs, and landmarks support your guess.\n"
         "Do NOT output JSON; answer in natural language.\n\n"
-        "ANSWER:\n"
     )
     return prompt
 

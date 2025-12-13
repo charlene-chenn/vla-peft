@@ -10,3 +10,6 @@ accelerate
 datasets
 pillow
 ultralytics
+fastapi
+pydantic
+uvicorn
