@@ -20,7 +20,7 @@ from transformers import (
 
 from yolo_detector import YOLOv8Detector  # type: ignore
 THIS_DIR = Path(__file__).resolve().parent
-
+print(THIS_DIR)
 # -------------------------------------------------------------------------
 # 1. BASIC SETUP: GPU, CLEAR CACHE
 # -------------------------------------------------------------------------
