@@ -73,9 +73,7 @@ inputs = tokenizer(prompt, return_tensors="pt", truncation=True, max_length=2048
 inputs = {k: v.to(model.device) for k, v in inputs.items()}
 
 # Generate response
-print("\n" + "="*80)
 print("GENERATING RESPONSE...")
-print("="*80)
 
 with torch.no_grad():
     outputs = model.generate(

@@ -18,7 +18,7 @@ from huggingface_hub import login
 BASE_MODEL_NAME = "meta-llama/Llama-3.1-8B-Instruct"  # or use "unsloth/llama-3-8b-bnb-4bit" if you have the model
 LORA_CHECKPOINT_DIR = "./checkpoints/checkpoint-1494"  # Use the latest checkpoint
 
-print("Loading base model (this may take a while on CPU)...")
+print("Loading base model...")
 
 # Load model and tokenizer using transformers instead of unsloth
 tokenizer = AutoTokenizer.from_pretrained(BASE_MODEL_NAME)
