@@ -45,5 +45,5 @@ dir = Path("./dummy.json")
 with open(dir, 'r') as f:
     data = json.load(f) # load as dict
  
-print(f"Data: {data}, Type: {type(data)}")
+print("Data:", data, "Type:", type(data))
 
