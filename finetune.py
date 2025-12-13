@@ -68,7 +68,7 @@ model = FastLanguageModel.get_peft_model(
 # -------------------------------------------------------------------------
 
 # (1) YOLO
-YOLO_WEIGHTS = THIS_DIR / "checkpoints" / "yolo_best.pt"
+YOLO_WEIGHTS = THIS_DIR / "checkpoints" / "best_yolo.pt"
 yolo_detector = YOLOv8Detector(model_path=str(YOLO_WEIGHTS))
 
 # (2) CLIP
